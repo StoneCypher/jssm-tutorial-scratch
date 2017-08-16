@@ -143,4 +143,22 @@ RedN_RedE => RedN_GreenE => RedN_YellowE => RedN_RedE_2 => GreenN_RedE => Yellow
 [RedN_GreenE RedN_YellowE RedN_RedE GreenN_RedE YellowN_RedE RedN_RedE_2] ~> Off;
 ```
 
-![](https://stonecypher.github.io/jssm-tutorial-scratch/tlsm%204way%20flashred.png)
+![](https://stonecypher.github.io/jssm-tutorial-scratch/tlsm%20simple%204way%20flashred.png)
+
+
+
+<br/><br/>
+
+# 2-way flash red/yellow
+
+Of course, many four-way lights want to flash yellow in one direction, but red in the other.  Since
+this state isn't useful for emergencies like `Four-way Flash Red` is, we won't support forced
+transitions for it; major state changes should only be made from `Red`/`Red` states.
+
+So we'll just define two rules, each from a `Red`/`Red` pair to one of the two flashing pairs and
+then back to non-`_2`.
+
+```
+[RedN_RedE RedN_RedE_2] -> "Flash NS-Red EW-Yellow" -> [RedN_RedE RedN_RedE_2];
+[RedN_RedE RedN_RedE_2] -> "Flash NS-Yellow EW-Red" -> [RedN_RedE RedN_RedE_2];
+```
