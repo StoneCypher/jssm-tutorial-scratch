@@ -70,7 +70,7 @@ RedN_RedE => RedN_GreenE => RedN_YellowE => RedN_RedE_2 => GreenN_RedE => Yellow
 [RedN_GreenE RedN_YellowE RedN_RedE GreenN_RedE YellowN_RedE RedN_RedE_2] ~> Off;
 ```
 
-![](tlsm simple 4way with off.png)
+![](https://stonecypher.github.io/jssm-tutorial-scratch/tlsm%20simple%204way%20with%20off.png)
 
 ## RedN_RedE_2
 
@@ -88,4 +88,4 @@ RedN_RedE => RedN_GreenE => RedN_YellowE => RedN_RedE => GreenN_RedE => YellowN_
 [RedN_GreenE RedN_YellowE RedN_RedE GreenN_RedE YellowN_RedE] ~> Off;
 ```
 
-![](tlsm simple 4way with off no 2 bug.png)
+![](https://stonecypher.github.io/jssm-tutorial-scratch/tlsm%20simple%204way%20with%20off%20no%202%20bug.png)
