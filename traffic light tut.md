@@ -162,3 +162,39 @@ then back to non-`_2`.
 [RedN_RedE RedN_RedE_2] -> "Flash NS-Red EW-Yellow" -> [RedN_RedE RedN_RedE_2];
 [RedN_RedE RedN_RedE_2] -> "Flash NS-Yellow EW-Red" -> [RedN_RedE RedN_RedE_2];
 ```
+
+## Result
+
+That leaves us with
+
+```
+Off -> RedN_RedE;
+RedN_RedE => RedN_GreenE => RedN_YellowE => RedN_RedE_2 => GreenN_RedE => YellowN_RedE => RedN_RedE;
+
+"Four-way Flash Red" => RedN_RedE;
+"Four-way Flash Red" -> RedN_RedE_2;
+
+[RedN_RedE RedN_RedE_2] -> "Flash NS-Red EW-Yellow" -> [RedN_RedE RedN_RedE_2];
+[RedN_RedE RedN_RedE_2] -> "Flash NS-Yellow EW-Red" -> [RedN_RedE RedN_RedE_2];
+
+[                         RedN_RedE                          RedN_RedE_2] -> "Four-way Flash Red";
+[RedN_GreenE RedN_YellowE           GreenN_RedE YellowN_RedE            ] ~> "Four-way Flash Red";
+[RedN_GreenE RedN_YellowE RedN_RedE GreenN_RedE YellowN_RedE RedN_RedE_2] ~> Off;
+```
+
+![](https://stonecypher.github.io/jssm-tutorial-scratch/tlsm%20extraflash.png)
+
+
+
+<br/><br/>
+
+# Exercise for the reader
+
+Without worrying about states like `Off` and the flashing states, maybe try building two four-way
+intersections, both around green arrows:
+
+1. A four-way intersection where `Green`-`Yellow`-gone arrows are added for both directions for left
+turns simultaneously, and
+
+2. A four-way intersection where they're only added North-South, with a `Green`-`Yellow`-gone arrow
+for north while north is also `Green`, and where south stays `Red` until the arrow is gone.
